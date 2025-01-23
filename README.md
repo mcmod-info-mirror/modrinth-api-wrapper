@@ -1,6 +1,6 @@
 # modrinth_api_wrapper
 
-![modrinth_api_wrapper](https://socialify.git.ci/mcmod-info-mirror/modrinth_api_wrapper/image?description=1&font=Inter&issues=1&language=1&name=1&owner=1&pattern=Overlapping%20Hexagons&pulls=1&stargazers=1&theme=Auto)
+![modrinth-api-wrapper](https://socialify.git.ci/mcmod-info-mirror/modrinth-api-wrapper/image?description=1&font=Inter&forks=1&issues=1&language=1&name=1&owner=1&pattern=Overlapping+Hexagons&stargazers=1&theme=Dark)
 
 `modrinth_api_wrapper` 是一个用于与 Modrinth API 交互的 Python 包。它提供了方便的客户端类和方法来访问 Modrinth 的各种 API 端点。
 
