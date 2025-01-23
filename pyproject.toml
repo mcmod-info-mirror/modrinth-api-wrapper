@@ -12,7 +12,7 @@ dependencies = [
     "httpx>=0.28.1",
     "pydantic>=2.10.5",
 ]
-authors = [{ name = "Nyakku Shigure", email = "sigure.qaq@gmail.com" }]
+authors = [{ name = "z0z0r4", email = "z0z0r4@outlook.com" }]
 keywords = ["python", "modrinth", "mcinecraft", "api", "wrapper"]
 license = { text = "MIT" }
 classifiers = [
