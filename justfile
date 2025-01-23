@@ -3,7 +3,7 @@ set positional-arguments
 VERSION := `uv run scripts/get_version.py modrinth_api_wrapper/__init__.py`
 
 test:
-  uv run pytest .\tests\
+  uv run --with pytest python -m pytest tests
   just clean
 
 build:
@@ -24,3 +24,10 @@ publish:
 clean-builds:
   rm -rf build/
   rm -rf dist/
+
+ci-install:
+  uv sync --all-extras --dev
+
+clean:
+  rm -rf .pytest_cache/
+  rm -rf .mypy_cache/
