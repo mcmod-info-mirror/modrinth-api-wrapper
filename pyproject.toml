@@ -1,0 +1,42 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "modrinth-api-wrapper"
+version = "0.1.0"
+description = "Python wrapper for Modrinth API with Pydantic models"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "httpx>=0.28.1",
+    "pydantic>=2.10.5",
+]
+authors = [{ name = "Nyakku Shigure", email = "sigure.qaq@gmail.com" }]
+keywords = ["python", "modrinth", "mcinecraft", "api", "wrapper"]
+license = { text = "MIT" }
+classifiers = [
+  "Operating System :: OS Independent",
+  "License :: OSI Approved :: MIT License",
+  "Typing :: Typed",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: Implementation :: CPython",
+]
+
+[project.urls]
+Homepage = "https://github.com/mcmod-info-mirror/modrinth-api-wrapper"
+Documentation = "https://github.com/mcmod-info-mirror/modrinth-api-wrapper"
+Repository = "https://github.com/mcmod-info-mirror/modrinth-api-wrapper"
+Issues = "https://github.com/mcmod-info-mirror/modrinth-api-wrapper/issues"
+
+
+[tool.pytest.ini_options]
+markers = ["project", "version", "version_file", "tag", "search"]
+
