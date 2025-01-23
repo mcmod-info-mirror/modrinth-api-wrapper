@@ -148,7 +148,7 @@ tags = client.get_tag(tag="loader")
 
 ## TODO
 
-- [ ] TAG Model 
+- [ ] TAG Model
 - [ ] User API
 
 ## 贡献

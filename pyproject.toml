@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "modrinth-api-wrapper"
-version = "0.1.1"
+version = "1.0.0"
 description = "Python wrapper for Modrinth API with Pydantic models"
 readme = "README.md"
 requires-python = ">=3.8"
@@ -12,7 +12,7 @@ dependencies = [
     "httpx>=0.28.1",
     "pydantic>=2.10.5",
 ]
-authors = [{ name = "Nyakku Shigure", email = "sigure.qaq@gmail.com" }]
+authors = [{ name = "z0z0r4", email = "z0z0r4@outlook.com" }]
 keywords = ["python", "modrinth", "mcinecraft", "api", "wrapper"]
 license = { text = "MIT" }
 classifiers = [
