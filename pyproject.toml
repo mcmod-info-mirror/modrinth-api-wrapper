@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "modrinth-api-wrapper"
-version = "0.1.0"
+version = "0.1.1"
 description = "Python wrapper for Modrinth API with Pydantic models"
 readme = "README.md"
 requires-python = ">=3.8"

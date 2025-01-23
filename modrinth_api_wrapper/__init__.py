@@ -4,7 +4,7 @@ modrinth_api_wrapper init file.
 
 # Define some metadata here:
 
-__version__ = '0.1.0'
+__version__ = '0.1.1'
 __author__ = 'z0z0r4'
 
 from modrinth_api_wrapper.client import Client, Tag, SearchIndex, Algorithm
