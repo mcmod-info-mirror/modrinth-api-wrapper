@@ -35,24 +35,24 @@ client = Client()
 @pytest.mark.search
 def test_search_project():
     result = client.search_project(query="sodium")
-    assert type(result) == SearchResult
+    assert isinstance(result, SearchResult)
 
 
 @pytest.mark.project
 def test_get_project():
     for project_id in PROJECT_IDS:
         project = client.get_project(project_id=project_id)
-        assert type(project) == Project
+        assert isinstance(project, Project)
 
 
 @pytest.mark.project
 def test_get_projects():
     projects = client.get_projects(ids=PROJECT_IDS)
     for project in projects:
-        assert type(project) == Project
+        assert isinstance(project, Project)
     projects = client.get_projects(ids=SLUGS)
     for project in projects:
-        assert type(project) == Project
+        assert isinstance(project, Project)
 
 
 @pytest.mark.version
@@ -60,43 +60,43 @@ def test_get_project_versions():
     for project_id in PROJECT_IDS:
         versions = client.list_project_versions(project_id=project_id)
         for version in versions:
-            assert type(version) == Version
+            assert isinstance(version, Version)
 
 
 @pytest.mark.version
 def test_get_version():
     for version_id in VERSION_IDS:
         version = client.get_version(version_id=version_id)
-        assert type(version) == Version
+        assert isinstance(version, Version)
 
 
 @pytest.mark.version
 def test_get_versions():
     versions = client.get_versions(version_ids=VERSION_IDS)
     for version in versions:
-        assert type(version) == Version
+        assert isinstance(version, Version)
 
 
 @pytest.mark.version_file
 def test_get_version_from_hash():
     for sha1 in SHA1:
         version = client.get_version_from_hash(sha1=sha1)
-        assert type(version) == Version
+        assert isinstance(version, Version)
     for sha512 in SHA512:
         version = client.get_version_from_hash(sha512=sha512)
-        assert type(version) == Version
+        assert isinstance(version, Version)
 
 
 @pytest.mark.version_file
 def test_get_versions_from_hashes():
     versions = client.get_versions_from_hashes(hashes=SHA1, algorithm=Algorithm.SHA1)
     for version in versions.values():
-        assert type(version) == Version
+        assert isinstance(version, Version)
     versions = client.get_versions_from_hashes(
         hashes=SHA512, algorithm=Algorithm.SHA512
     )
     for version in versions.values():
-        assert type(version) == Version
+        assert isinstance(version, Version)
 
 
 @pytest.mark.version_file
@@ -105,12 +105,12 @@ def test_get_latest_version_from_hash():
         version = client.get_latest_version_from_hash(
             sha1=sha1, loaders=["fabric"], game_versions=["1.16.5"]
         )
-        assert type(version) == Version
+        assert isinstance(version, Version)
     for sha512 in SHA512:
         version = client.get_latest_version_from_hash(
             sha512=sha512, loaders=["fabric"], game_versions=["1.16.5"]
         )
-        assert type(version) == Version
+        assert isinstance(version, Version)
 
 
 @pytest.mark.version_file
@@ -122,7 +122,7 @@ def test_get_latest_versions_from_hashes():
         game_versions=["1.16.5"],
     )
     for version in versions.values():
-        assert type(version) == Version
+        assert isinstance(version, Version)
     versions = client.get_latest_versions_from_hashes(
         hashes=SHA512,
         algorithm=Algorithm.SHA512,
@@ -130,12 +130,11 @@ def test_get_latest_versions_from_hashes():
         game_versions=["1.16.5"],
     )
     for version in versions.values():
-        assert type(version) == Version
+        assert isinstance(version, Version)
 
 
 @pytest.mark.tag
 def test_get_tag():
-
     for tag_name in TAG_NAMES:
         tag = client.get_tag(tag=tag_name)
-        assert type(tag) == list or dict
+        assert isinstance(tag, (list, dict))

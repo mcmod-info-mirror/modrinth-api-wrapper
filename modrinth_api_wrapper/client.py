@@ -69,7 +69,7 @@ class Client:
             params={
                 "query": query,
                 "facets": facets,
-                "index": index if type(index) is str else index.value,
+                "index": index.value if isinstance(index, SearchIndex) else index,
                 "offset": offset,
                 "limit": limit,
             },
@@ -116,7 +116,7 @@ class Client:
             headers=self.headers,
             json={
                 "hashes": hashes,
-                "algorithm": algorithm if type(algorithm) is str else algorithm.value,
+                "algorithm": algorithm.value if isinstance(algorithm, Algorithm) else algorithm,
             },
         )
         return {key: Version(**item) for key, item in res.items()}
@@ -154,7 +154,7 @@ class Client:
             headers=self.headers,
             json={
                 "hashes": hashes,
-                "algorithm": algorithm if type(algorithm) is str else algorithm.value,
+                "algorithm": algorithm.value if isinstance(algorithm, Algorithm) else algorithm,
                 "hashes": hashes,
                 "loaders": loaders,
                 "game_versions": game_versions,
@@ -163,6 +163,6 @@ class Client:
         return {key: Version(**item) for key, item in res.items()}
 
     def get_tag(self, tag: Union[Tag, str]) -> Union[List, Dict]:
-        url = f"{self.endpoint}/v2/tag/{tag.value if type(tag) is Tag else tag}"
+        url = f"{self.endpoint}/v2/tag/{tag.value if isinstance(tag, Tag) else tag}"
         res = request(url, headers=self.headers)
         return res
